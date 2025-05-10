@@ -17,3 +17,21 @@ $ conda create -n rag-app python=3.8
 ```bash
 $ conda activate rag-app
 ```
+
+## Installation
+
+### Install the required packages
+
+```bash
+$ pip install -r requirements.txt
+```
+
+### Setup the environment variables
+
+```bash
+$ cp .env.example .env
+```
+
+Set your environment variables in the `.env` file. Like `GROQ_API_KEY` value.
+
+you can find your API key in the [Groq dashboard](https://console.groq.com/keys).
