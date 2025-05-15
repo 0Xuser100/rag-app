@@ -21,7 +21,7 @@ class DataController(BaseController):
         
         return True,ResponseSignals.FILE_VALIDATION_SUCCESS.value 
     
-    def generate_unique_filename(self,original_filename:str,project_id:int):
+    def generate_unique_filepath(self,original_filename:str,project_id:int):
         # Generate a unique filename using the project ID and the original filename 
         random_key = self.generate_random_string()
         project_path=ProjectContorller().get_project_path(project_id=project_id)
@@ -39,7 +39,7 @@ class DataController(BaseController):
             )
 
         # Return the new file path
-        return new_file_path
+        return new_file_path,random_key+"_"+cleaned_filename
     def get_cleaned_filename(self,original_filename:str):
 # Remove any special characters from the filename except for alphanumeric characters, underscores, and periods
         # and replace spaces with underscores

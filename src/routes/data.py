@@ -35,7 +35,7 @@ async def upload_data(project_id:str,file:UploadFile,app_settings:Settings = Dep
         #     file.filename
         # )   
         # Generate a unique filename using the project ID and the original filename
-        file_path=datacontroller.generate_unique_filename(
+        file_path,file_id=datacontroller.generate_unique_filepath(
            original_filename=file.filename,
            project_id=project_id
            )
@@ -53,6 +53,8 @@ async def upload_data(project_id:str,file:UploadFile,app_settings:Settings = Dep
         
         return JSONResponse(
             status_code=status.HTTP_200_OK,
-            content={"signal":ResponseSignals.FILE_UPLOAD_SUCCESS.value}
+            content={"signal":ResponseSignals.FILE_UPLOAD_SUCCESS.value
+                     ,"file_id":file_id,
+                    }
         )
     
