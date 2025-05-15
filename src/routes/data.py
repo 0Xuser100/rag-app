@@ -7,7 +7,7 @@ from controllers import DataController
 from controllers import ProjectContorller
 from models import ResponseSignals
 import logging
-
+from .schemes.data import ProccessRequest
 # Initialize logger
 logger = logging.getLogger("uvicorn.error")
 
@@ -58,3 +58,8 @@ async def upload_data(project_id:str,file:UploadFile,app_settings:Settings = Dep
                     }
         )
     
+@data_router.post("/process/{project_id}")
+async def proccess_endpoint(project_id:str,proccess_request:ProccessRequest):
+    file_id=proccess_request.file_id
+    
+    return file_id
