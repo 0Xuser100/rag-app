@@ -7,6 +7,8 @@ class Settings(BaseSettings):# S letter should be upper case or lower case it do
     FILE_ALLOWED_TYPES:list
     FILE_MAX_SIZE:int
     FILE_DEFAULT_CHUNK_SIZE : int
+    MONGODB_URI:str
+    MONGODB_DATABASE:str
 
 
     class Config:# C letter should be upper case
