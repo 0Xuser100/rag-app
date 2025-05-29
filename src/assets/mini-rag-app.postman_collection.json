@@ -1,16 +1,26 @@
 {
 	"info": {
-		"_postman_id": "a6f3477c-ea37-48b8-9f8a-968cb9045dc8",
-		"name": "rag-app",
+		"_postman_id": "1f67dedb-1b93-4639-9f96-7fe8681693f4",
+		"name": "mini-rag-app",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "40913625"
+		"_exporter_id": "854486",
+		"_collection_link": "https://www.postman.com/gold-water-645258/workspace/mini-rag-app/collection/854486-1f67dedb-1b93-4639-9f96-7fe8681693f4?action=share&source=collection_link&creator=854486"
 	},
 	"item": [
 		{
-			"name": "welcome request",
+			"name": "welcome-request",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "{{api}}/welcome",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"welcome"
+					]
+				}
 			},
 			"response": []
 		}
